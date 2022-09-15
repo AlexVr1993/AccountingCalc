@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="calc">
+      <div class="calc__item">
+        <span class="label">Налогооблажение</span>
+        
+        <select class="select-css" id="taxationControl">
+          <option selected disabled>Выберете диапазон хозопераций</option>
+          <option value="osno">ОСНО</option>
+          <option value="usn15">УСН 15% / ЕСХН</option>
+          <option value="usn6">УСН 6%</option> 
+          <option value="patent">Патент</option>
+          <option value="usnPatent">УСН + Патент</option> 
+          <option value="osnoPatent">ОСНО + Патент</option>  
+        </select>
+      </div>
+
+      <div class="calc__item">
+        <span class="label">Количество хозяйственных операций в месяц</span>
+
+        <select class="select-css hidden" id="operationCountControl">
+          <option value="default" selected disabled>Выберете колличество операций</option>
+          <option value="until5">до 5</option>
+          <option value="until10">до 10</option>
+          <option value="until15">до 15</option>
+          <option value="until20">до 20</option> 
+          <option value="until30">до 30</option>
+          <option value="until40">до 40</option>  
+          <option value="until50">до 50</option>
+          <option value="until60">до 60</option>
+          <option value="until70">до 70</option>
+          <option value="until80">до 80</option> 
+          <option value="until90">до 90</option>
+          <option value="until100">до 100</option> 
+        </select>
+
+        <input 
+          class="control"
+          type="number"
+          id="manualyOperationCountControl"
+          max="100"
+          min="1"
+          value="1"
+        >
+      </div>
+
+      <div class="calc__item">
+        <span class="label">Колличество сотрудников</span>
+        <input
+          class="control"
+          id="employeesCountControl"
+          type="number"
+          maxlength="2"
+          max="15"
+          min="1"
+          value="1"
+          maxlength="2"
+        >
+      </div>
+
+      <div class="calc__item">
+        <span class="label">Предварительный тариф, мес.</span>
+  
+        <div class="total-wrapper">
+          <span class="total-count" id="totalView"></span>
+        </div>
+      </div>
+
+      <div class="calc__item checkbox">
+        <label for="firstTimeTypingControl">Ввожу первичные документы самостоятельно</label>
+
+        <input id="firstTimeTypingControl" type="checkbox" checked/>
+      </div> 
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
